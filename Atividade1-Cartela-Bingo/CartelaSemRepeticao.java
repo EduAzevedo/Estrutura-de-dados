@@ -1,5 +1,6 @@
 
 
+import java.util.Collections;
 import java.util.Random;
 
 public class CartelaSemRepeticao {
