@@ -1,9 +1,6 @@
-
-
-import java.util.Collections;
 import java.util.Random;
 
-public class CartelaSemRepeticao {
+public class CartelaSemRepeticao implements ICartelaJogo {
     private int numbers[][];
     private Random randomNumber = new Random();
 
@@ -34,7 +31,7 @@ public class CartelaSemRepeticao {
     }
 
     public void showNumbers() {
-        
+
         for (int i = 0; i < numbers.length; i++) {
             String line = "";
             for (int j = 0; j < numbers.length; j++) {
@@ -44,5 +41,17 @@ public class CartelaSemRepeticao {
 
         }
 
+    }
+
+    @Override
+    public void marcarNumeroSorteado(int N) {
+        
+        
+    }
+
+    @Override
+    public boolean ehCartelaVencedora(boolean verificarPorLinha) {
+        // TODO Auto-generated method stub
+        return false;
     }
 }

@@ -15,8 +15,6 @@ public class MergeSort {
         if(inicio < fim - 1) {
 
             int meio = (inicio + fim) / 2;
-
-
             mergeSort(inicio, meio, vetor);
 
             mergeSort(meio, fim, vetor);

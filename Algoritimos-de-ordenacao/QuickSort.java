@@ -44,6 +44,7 @@ public class QuickSort {
                 j--;
             } while (vetor[j] > pivot);
             if (i >= j) {
+                
                 return j;
             }
             int aux = vetor[i];
