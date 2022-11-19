@@ -1,3 +1,4 @@
+
 public class App {
     public static void main(String[] args) throws Exception {
         ListaLigada lista = new ListaLigada();
@@ -15,6 +16,7 @@ public class App {
         System.out.println();
 
         System.out.println("Impressão 1:");
+        System.out.println("Tamanho da lista: " + lista.getTamanho());
         for (int i = 0; i < lista.getTamanho(); i++) {
             System.out.println(i + ": " + lista.getNo(i).getValor());
         }
@@ -22,17 +24,20 @@ public class App {
         System.out.println();
         System.out.println("Impressão 2:");
 
-        // Remover e adicionar itens a lista
+        // Remover itens da lista
         lista.remover("Sergipe");
         lista.remover("Ceará");
 
-        lista.adicionar("Amazonas");
-        System.out.println("Tamanho da lista: " + lista.getTamanho());
+        //Adiciona no fim
+        lista.adicionar("São Paulo");
+        //Adiciona onnde quiser
+        lista.adicionar(1, "Maranhao");
+
+        
         for (int i = 0; i < lista.getTamanho(); i++) {
             System.out.println(i + ": " + lista.getNo(i).getValor());
         }
-        System.out.println("===========================");
-
-        System.out.println();
+        System.out.println("Tamanho da lista: " + lista.getTamanho());
+  
     }
 }

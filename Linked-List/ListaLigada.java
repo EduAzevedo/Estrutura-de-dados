@@ -46,6 +46,27 @@ public class ListaLigada {
 
     }
 
+    public void adicionar(int posicao, String novoValor) {
+        No novoNo = new No(novoValor);
+
+        if (posicao == 0) {
+            System.out.println("Item adicionado no inicio!");
+            novoNo.setProxNo(primeiro);
+            this.primeiro = novoNo;
+        } else if (posicao == this.tamanho) {
+            System.out.println("Item adicionado no fim!");
+            this.ultimo.setProxNo(novoNo);
+            this.ultimo = novoNo;
+        } else {
+            System.out.println("Item adicionado no meio!");
+            No temp = this.getNo(posicao - 1);
+            No antecessor = this.getNo(posicao - 2);
+            antecessor.setProxNo(novoNo);
+            novoNo.setProxNo(temp);
+        }
+        this.tamanho++;
+    }
+
     public void remover(String valor) {
         No anterior = null;
         No atual = this.primeiro;
@@ -78,6 +99,7 @@ public class ListaLigada {
         for (int i = 0; i < posicao; i++) {
             if (atual.getProxNo() != null) {
                 atual = atual.getProxNo();
+
             }
         }
         return atual;
