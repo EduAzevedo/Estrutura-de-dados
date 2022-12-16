@@ -16,8 +16,5 @@ public class Main {
                 System.out.println("Desempilhado: " + element);
             }
         }
-
-        // Erro de pilha vazia!
-        int e = pilha.pop();
     }
 }
