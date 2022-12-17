@@ -1,44 +1,44 @@
 
 public class Fila {
-    private int elementos[];
-    private int primeiro;
-    private int ultimo;
-    private int total;
+    private int elements[];
+    private int head;
+    private int tail;
+    private int size;
 
     public Fila() {
-        this.elementos = new int[10];
-        this.primeiro = 0;
-        this.ultimo = 0;
-        this.total = 0;
+        this.elements = new int[10];
+        this.head = 0;
+        this.tail = 0;
+        this.size = 0;
     }
 
     public void queue(int n) {
         if (isFull()) {
-            throw new IllegalStateException("Fila Cheia!");
+            throw new IllegalStateException("Queue is full!");
         }
-        elementos[this.ultimo] = n;
-        this.ultimo = (this.ultimo + 1) % this.elementos.length;
-        this.total++;
+        elements[this.tail] = n;
+        this.tail = (this.tail + 1) % this.elements.length;
+        this.size++;
 
     }
 
     public int dequeue() {
         if (isEmpty()) {
-            throw new IllegalStateException("Fila Vazia!");
+            throw new IllegalStateException("Queue is empty!");
         }
-        int item = elementos[this.primeiro];
-        this.primeiro = (this.primeiro + 1) % this.elementos.length;
-        this.total--;
+        int item = elements[this.head];
+        this.head = (this.head + 1) % this.elements.length;
+        this.size--;
         return item;
 
     }
 
     public boolean isEmpty() {
-        return (this.total == 0);
+        return (this.size == 0);
     }
 
     public boolean isFull() {
-        return (this.total == elementos.length);
+        return (this.size == elements.length);
     }
 
 }
